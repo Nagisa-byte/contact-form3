@@ -1,0 +1,117 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
+}
+
+/* 各 form__group を左右並び（タイトル＋入力欄）にする */
+.form__group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* ラベル部分（項目名）の幅を固定 */
+.form__group-title {
+    width: 200px;
+    /* 任意で調整可 */
+    font-weight: bold;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+/* 入力欄部分を残りの幅に広げる */
+.form__group-content {
+    flex: 1;
+}
+
+/* 入力ボックス */
+.form__input--text input,
+.form__input--textarea textarea,
+.form__input--select select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* テキストエリアの高さ調整 */
+.form__input--textarea textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+.form__input--select select{
+    height:35px;
+}
+
+/* エラーメッセージ左揃え */
+.form__error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* 電話番号3分割の横並び */
+.form__tel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__tel-wrapper .form__input--text {
+    width: 27%;
+}
+
+/* 苗字・名前の入力欄を横並びにする */
+.form__name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* ボックス間の余白を調整 */
+}
+
+/* それぞれの入力欄の幅を均等にする */
+.form__name-wrapper .form__input--text {
+    width: 40%;
+}
+
+/* ラジオボタンも左揃えに */
+.form__group--horizontal {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form__button {
+    margin-top: 30px;
+    display: flex;
+        /* ←追加 */
+    justify-content: center;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #a8957f;;
+    color: #fff;
+    cursor: pointer;
+}
