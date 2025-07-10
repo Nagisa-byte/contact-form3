@@ -24,5 +24,6 @@ Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts/store', [ContactController::class, 'store']);
 Route::post('/contacts/back', [ContactController::class, 'back']);
 Route::middleware(['auth'])->group(function () {
-        Route::get('/admin', [ContactController::class, 'list'])->name('admin');
+        
     });
+Route::get('/admin', [ContactController::class, 'list'])->name('admin');

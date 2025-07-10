@@ -27,5 +27,6 @@
         @yield('content')
     </main>
 </body>
+@yield('scripts')
 
 </html>

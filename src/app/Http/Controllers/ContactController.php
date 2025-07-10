@@ -78,8 +78,7 @@ class ContactController extends Controller
         if ($keyword = $request->input('keyword')) {
             $query->where(function ($q) use ($keyword) {
                 $q->where('name', 'like', "%{$keyword}%")
-                    ->orWhere('email', 'like', "%{$keyword}%")
-                    ->orWhere('detail', 'like', "%{$keyword}%"); // お問い合わせ本文に対して
+                    ->orWhere('email', 'like', "%{$keyword}%");
             });
         }
 
