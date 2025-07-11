@@ -38,7 +38,6 @@ class ContactController extends Controller
             return redirect('/contacts')->withInput();
         }
 
-
         return view('confirm', ['contact' => $contact]);
     }
 
@@ -46,28 +45,26 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
 
-        $tel = implode('-', $request->input('tel'));
-
         $contact = $request->only([
             'last_name',
             'first_name',
             'gender',
             'email',
+            'tel',
             'address',
             'building',
             'category_id',
             'detail'
         ]);
-        $contact['tel'] = $tel;
-
 
             Contact::create($contact);
             return view('/thanks');
     }
 
     public function back(ContactRequest $request){
-        return redirect('/contacts')->withInput();
+        return redirect('/')->withInput();
     }
+
 
     public function list(Request $request)
     {
@@ -77,7 +74,8 @@ class ContactController extends Controller
         // キーワード検索（名前・メール・お問い合わせ内容）
         if ($keyword = $request->input('keyword')) {
             $query->where(function ($q) use ($keyword) {
-                $q->where('name', 'like', "%{$keyword}%")
+                $q->where('last_name', 'like', "%{$keyword}%")
+                    ->where('first_name', 'like', "%{$keyword}%")
                     ->orWhere('email', 'like', "%{$keyword}%");
             });
         }

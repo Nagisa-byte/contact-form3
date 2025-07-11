@@ -2,19 +2,6 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/thanks.css') }}" />
-
-<style>
-    .form__button-submit {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: #333;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        text-align: center;
-    }
-</style>
-
 @endsection
 
 @section('content')

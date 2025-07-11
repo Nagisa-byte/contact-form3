@@ -1,141 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<style>
-    .header__logout-form {
-        margin-left: auto;
-    }
-
-    /* 全体レイアウト */
-    body {
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 20px;
-    }
-
-    /* セクションタイトル */
-    .section__title h2 {
-        font-size: 24px;
-        margin-bottom: 1em;
-    }
-
-    /* 検索フォーム */
-    .search-form__filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .search-form__item {
-        display: flex;
-    }
-
-    .search-form__item-input,
-    .search-form__item-select {
-        padding: 8px 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-        min-width: 160px;
-    }
-
-    .search-form__button-submit,
-    .search-form__button-reset {
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-        background-color: #a8957f;
-        margin-left: 5px;
-    }
-
-    .search-form__button-reset {
-        background-color: #a8957f;
-    }
-
-
-
-
-
-
-    /* テーブル */
-    .contact-table__inner {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-table__header th {
-        background-color: #a8957f;
-        color: white;
-        padding: 12px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
-
-    .contact-table__item td {
-        padding: 10px;
-        border: 1px solid #ddd;
-    }
-
-    .contact-table__item:hover {
-        background-color: #f1f1f1;
-    }
-
-    /* モーダル */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .modal-content {
-        background-color: #fff;
-        margin: auto;
-        padding: 20px;
-        border-radius: 8px;
-        width: 90%;
-        max-width: 500px;
-        position: relative;
-    }
-
-    .modal-close {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 24px;
-        cursor: pointer;
-        color: #999;
-    }
-
-    .modal-close:hover {
-        color: #333;
-    }
-
-    .modal-content h3 {
-        margin-top: 0;
-        margin-bottom: 1em;
-    }
-
-    .modal-content p {
-        margin: 0.5em 0;
-    }
-</style>
-
-
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
 @section('header-button')
@@ -254,7 +120,7 @@
                 };
                 const categories = @json($categories);
 
-                document.getElementById('modal-name').textContent = contact.name;
+                document.getElementById('modal-name').textContent = contact.last_name + ' ' + contact.first_name;
                 document.getElementById('modal-gender').textContent = genders[contact.gender] || '不明';
                 document.getElementById('modal-email').textContent = contact.email;
                 document.getElementById('modal-tel').textContent = contact.tel;

@@ -8,3 +8,12 @@
     margin-bottom: 40px;
     text-align: center;
 }
+
+.form__button-submit {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    background-color:#a8957f;
+    border-radius: 4px;
+    text-align: center;
+}

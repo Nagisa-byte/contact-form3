@@ -100,7 +100,7 @@
         <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
 
         <div class="form__button">
-            <button class="form__button-submit" name="action" type="submit" value="back">修正</button>
+            <button class="form__button-back" name="action" type="submit" value="back">修正</button>
         </div>
     </form>
 
