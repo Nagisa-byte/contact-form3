@@ -196,9 +196,6 @@ body {
 
 
 
-
-
-
 /* テーブル */
 .contact-table__inner {
     width: 100%;
@@ -268,4 +265,14 @@ body {
 
 .modal-content p {
     margin: 0.5em 0;
+}
+
+.modal-delete-button {
+    background-color: #e3342f;
+    color: white;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    margin-top: 1.5em;
+    cursor: pointer;
 }

@@ -75,7 +75,7 @@ class ContactController extends Controller
         if ($keyword = $request->input('keyword')) {
             $query->where(function ($q) use ($keyword) {
                 $q->where('last_name', 'like', "%{$keyword}%")
-                    ->where('first_name', 'like', "%{$keyword}%")
+                    ->orwhere('first_name', 'like', "%{$keyword}%")
                     ->orWhere('email', 'like', "%{$keyword}%");
             });
         }
@@ -102,5 +102,11 @@ class ContactController extends Controller
         $categories = Category::pluck('content', 'id')->toArray();
 
         return view('admin', compact('contacts', 'categories'));
+    }
+
+    public function destroy($id)
+    {
+        Contact::findOrFail($id)->delete();
+        return redirect('/admin')->with('success', 'お問い合わせを削除しました。');
     }
 }
